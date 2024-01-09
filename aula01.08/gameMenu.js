@@ -14,14 +14,8 @@ switch (options) {
     case 3:
         console.log('Abrindo configurações')
         break
-    // case 4:
-    //     const exitOrNot = prompt('Deseja mesmo sair? S/N')
-    //     switch (exitOrNot) {
-    //         case 'S':
-    //             console.log('Saindo do jogo');
-    //         case 'N':
-    //             console.log('Voltando ao jogo')
-    //     }
+    case 4:
+        console.log('Saindo do jogo')
         break
 
 }
