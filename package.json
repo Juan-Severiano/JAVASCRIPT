@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.3",
+    "ts-node": "^10.9.2"
   }
 }
