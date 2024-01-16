@@ -20,3 +20,11 @@ const obj = {};
 obj.falar = () => 'Opa, to aqui viado'
 
 console.log(obj.falar())
+
+// funcao como parametro
+
+function run(fun3) {
+  fun3()
+}
+
+run(function () { console.log('Executando ........') })
