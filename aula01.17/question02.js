@@ -8,52 +8,12 @@ const convertHour = (hour) => {
   let newHour = hour;
   let paramAmOrPm = 'A.M';
   if (hour > 12) {
-    switch (hour) {
-      case 13:
-        newHour = 1
-        break
-      case 14:
-        newHour = 2
-        break
-      case 15:
-        newHour = 3
-        break
-      case 16:
-        newHour = 4
-        break
-      case 17:
-        newHour = 5
-        break
-      case 18:
-        newHour = 6
-        break
-      case 19:
-        newHour = 7
-        break
-      case 20:
-        newHour = 8
-        break
-      case 21:
-        newHour = 9
-        break
-      case 22:
-        newHour = 10
-        break
-      case 23:
-        newHour = 11
-        break
-      case 24:
-        newHour = 12
-        break
-    }
+    newHour = hour - 12;
     paramAmOrPm = 'P.M'
   }
   return { newHour, paramAmOrPm };
 }
-const defineHour = (hour, minute) => {
-  let newHour = convertHour(hour);
-  return `${newHour.newHour}:${minute} ${newHour.paramAmOrPm}`;
-}
+const defineHour = (hour, minute) => `${convertHour(hour).newHour}:${minute} ${convertHour(hour).paramAmOrPm}`;
 
 while (true) {
   const hours = parseInt(prompt('Digite as horas: '));

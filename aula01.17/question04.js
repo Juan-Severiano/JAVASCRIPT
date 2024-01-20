@@ -3,6 +3,10 @@ const prompt = require('prompt-sync')();
 
 const number = Number(prompt('Digite um número: '));
 
-const numberIsPar = n => n % 2 == 0 ? true : false;
+const isPrime = (num) => {
+  if (num <= 1) return false
+  for (let i = 2; i < num; i++) if (num % i === 0) return false;
+  return true;
+};
 
-console.log(numberIsPar(number));
+console.log(isPrime(number));

@@ -13,8 +13,8 @@
 
 const prompt = require('prompt-sync')();
 
-const name = prompt('Informe seu nome: ').toLowerCase();
+const name = Number(prompt('Informe seu nome: '));
 
-const funcao = name === 'paulo' ? 'Professor' : name === 'aline' ? 'Aluna' : name === 'mateus' ? 'aluno' : 'Não identificado' 
+// const funcao = name === 'paulo' ? 'Professor' : name === 'aline' ? 'Aluna' : name === 'mateus' ? 'aluno' : 'Não identificado' 
 
-console.log(funcao)
+console.log(name)

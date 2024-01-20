@@ -1,13 +1,13 @@
 // Data com mês por extenso. Construa uma função que receba uma data no formato DD/MM/AAAA e devolva uma string no formato Dia de mesPorExtenso de Ano. Opcionalmente, valide a data e retorne NULL caso a data seja inválida.
+
 const prompt = require('prompt-sync')();
 
 const userDay = Number(prompt('Digite o dia: '));
 const userMouth = Number(prompt('Digite o mês: '));
-const userYear = Number(prompt('Digite o mês: '));
+const userYear = Number(prompt('Digite o ano: '));
 
-const dateFormat = (day, mouth, year) => {
-  return day < 1 && day > 31 && mouth < 1 && mouth > 12 ?  `${day} de ${defineMouth(mouth)} de ${year}` : null
-}
+const dateFormat = (day, mouth, year) =>
+(day < 1 && day > 31 && mouth < 1 && mouth > 12 ? null : `${day} de ${defineMouth(mouth)} de ${year}`)
 
 const defineMouth = (numMouth) => {
   switch (numMouth) {
