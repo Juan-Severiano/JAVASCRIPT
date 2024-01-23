@@ -1,3 +1,3 @@
 function changeClass() {
-  document.getElementsByClassName('style1').className = 'style2'
+  document.getElementsByClassName('style1')[0].className = 'style2'
 }
