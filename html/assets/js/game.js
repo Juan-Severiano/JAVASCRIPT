@@ -1,6 +1,8 @@
 let height = 0
 let width = 0
 let numVida = 1
+let time = 15
+let quantidadeMosquito = 0
 
 function stageHeight() {
   height = window.innerHeight
@@ -11,6 +13,16 @@ function stageHeight() {
 
 stageHeight();
 
+let cronometro = setInterval(() => {
+  time --
+  if (time <= 0) {
+    clearInterval(cronometro);
+    clearInterval(criaMosquito);
+    window.location.href = 'game_winner.html'
+  }
+
+  document.getElementById('cronometro').innerHTML = time
+}, 1000)
 
 function randomImg() {
   if (document.getElementById('mosquito')) {
@@ -37,6 +49,8 @@ function randomImg() {
   mosquito.style.position = 'absolute'
   mosquito.id = 'mosquito';
   mosquito.onclick = function () {
+    quantidadeMosquito ++
+    document.getElementById('score').innerHTML = quantidadeMosquito
     this.remove()
   }
 
