@@ -1,5 +1,6 @@
 let height = 0
 let width = 0
+let numVida = 1
 
 function stageHeight() {
   height = window.innerHeight
@@ -12,8 +13,17 @@ stageHeight();
 
 
 function randomImg() {
-  let positionX = Math.floor(Math.random() * width)
-  let positionY = Math.floor(Math.random() * height)
+  if (document.getElementById('mosquito')) {
+    document.getElementById('mosquito').remove();
+    if (numVida > 3) {
+      location.href = 'game_over.html'
+    }
+    document.getElementById('vida' + numVida).src = './assets/images/coracao_vazio.png'
+    numVida ++
+  }
+
+  let positionX = Math.floor(Math.random() * width)  - 30
+  let positionY = Math.floor(Math.random() * height) - 30
 
   positionX  = positionX < 0 ? 0 : positionX
   positionY  = positionY < 0 ? 0 : positionY
@@ -25,8 +35,11 @@ function randomImg() {
   mosquito.style.left = positionX + 'px'
   mosquito.style.top = positionY + 'px'
   mosquito.style.position = 'absolute'
+  mosquito.id = 'mosquito';
+  mosquito.onclick = function () {
+    this.remove()
+  }
 
-  
   document.body.appendChild(mosquito);
 }
 
