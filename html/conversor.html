@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/conversor.css">
+    <script src="./assets/js/conversor.js" defer></script>
+  </head>
+  
+  <body>
+  <div class="container py-3">
+    <h1>Conversor de unidades</h1>
+    <div class="input-group mb-3">
+      <label for="input">Digite uma quantidade: 
+        <input id="input" class="form-control" type="number" placeholder="0">
+      </label>
+    </div>
+    <div class="input-group mb-3">
+      <label for="from">De: 
+        <select class="form-control" name="from" id="from">
+          <option value="none">Selecione a unidade</option>
+          <option value="km">Quilômetros</option>
+          <option value="m">Metros</option>
+          <option value="cm">Centímetros</option>
+          <option value="mm">Milímetros</option>
+        </select>
+      </label>
+    </div>
+    <div class="input-group mb-3">
+      <label for="to">Para: 
+        <select class="form-control" name="to" id="to">
+          <option value="none">Selecione a unidade</option>
+          <option value="km">Quilômetros</option>
+          <option value="m">Metros</option>
+          <option value="cm">Centímetros</option>
+          <option value="mm">Milímetros</option>
+        </select>
+      </label>
+    </div>
+    <button type="button" class="btn btn-secondary" id="converter-btn">Converter</button>
+    <div class="output-group">
+      <label for="output">Resultado: 
+        <input type="text" id="output" class="form-control" name="output" readonly disabled >
+      </label>
+      <div id="message"></div>
+    </div>
+  </div>
+</body>
+
+</html>
