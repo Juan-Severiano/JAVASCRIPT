@@ -26,6 +26,7 @@ class Task {
 }
 
 function saveTask(task) {
+  console.log('asd')
   let tasks = new Array()
 
   if (localStorage.hasOwnProperty("tasks")) {
@@ -34,9 +35,9 @@ function saveTask(task) {
 
   tasks.push(task);
 
-  localStorage.setItem("tasks", JSON.stringify(tasks))
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  alert('save')
+  alert('save');
 }
 
 function saveTaskByID(task, id) {
@@ -87,7 +88,12 @@ function createCardElement(cardData, id, list) {
   const deleteItem = document.createElement('p');
   deleteItem.innerText = 'Deletar';
   deleteItem.addEventListener('click', () => {
-    list.remove(id)
+    for (let i = 0; i < list.length; i++) {
+      list.splice(id, 3)
+      saveTask(list[id]);
+      console.log('asd2')
+    }
+    console.log(list)
   })
   const checkBox = document.createElement('input');
   checkBox.type = 'checkbox'
@@ -114,6 +120,7 @@ function createCardElement(cardData, id, list) {
   card.appendChild(cardBody)
   return card
 }
+
 
 function loadTasks() {
   if (localStorage.hasOwnProperty("tasks")) {
