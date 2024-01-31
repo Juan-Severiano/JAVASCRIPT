@@ -1,0 +1,21 @@
+.task {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  margin: 0px 10px;
+  max-width: 300px;
+}
+
+.task:hover {
+  background-color: #f0f0f0;
+  transition: all 300ms ease-in-out;
+}
+
+.task .bi { border-radius: 100%; }
+.task .bi:hover { background-color: #c0c0c0; }
+
+#ul  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
